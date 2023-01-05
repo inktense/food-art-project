@@ -1,0 +1,19 @@
+{
+  "name": "food-art-project",
+  "version": "1.0.0",
+  "description": "Code art food theme",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/inktense/food-art-project.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "canvas-sketch": "^0.7.6",
+    "canvas-sketch-util": "^1.10.0"
+  }
+}
