@@ -4,7 +4,8 @@
   "description": "Code art food theme",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint":"eslint"
   },
   "repository": {
     "type": "git",
@@ -15,5 +16,8 @@
   "dependencies": {
     "canvas-sketch": "^0.7.6",
     "canvas-sketch-util": "^1.10.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.31.0"
   }
 }
