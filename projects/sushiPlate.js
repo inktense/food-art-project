@@ -284,14 +284,14 @@ export const generateSushiPlate = (context, width, height) => {
     noStroke();
     rect(x, y, cellW * 0.5, cellH * 0.5, 30);
 
-    const borderLength = 30;
+    const borderLength = 20;
     fill("white");
     noStroke();
     rect(
       x + borderLength / 2,
       y + borderLength / 2,
-      cellW * 0.5 - borderLength,
-      cellH * 0.5 - borderLength,
+      cellW * 0.50 - borderLength,
+      cellH * 0.50 - borderLength,
       20
     );
 
@@ -324,5 +324,7 @@ export const generateSushiPlate = (context, width, height) => {
         dragonRollSushi(x, y, cellW, cellH);
         break;
     }
+
+
   }
 };
