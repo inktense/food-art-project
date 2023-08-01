@@ -1,14 +1,15 @@
 import canvasSketch from "canvas-sketch";
 
 import { generateCitrusPlate } from "./projects/citrusPlate.js"
+import { width, height } from "./constants";
 
 const settings = {
-    dimensions: [1200, 1200],
+    dimensions: [width, height],
   };
   
   const sketch = () => {
     return ({ context, width, height }) => {
-      context.fillStyle = "white";
+      context.fillStyle = "#F3E1DD";
       context.fillRect(0, 0, width, height);
   
       generateCitrusPlate(context, width, height);

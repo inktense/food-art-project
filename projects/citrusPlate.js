@@ -12,7 +12,7 @@ export const generateCitrusPlate = (context, width, height) => {
 
   const numCells = cols * rows;
 
-  context.fillStyle = "#b7e4e9";
+  context.fillStyle = "#F3E1DD";
   context.fillRect(margX, margY, width - margX * 2, height - margY * 2);
 
   for (let i = 0; i < numCells; i++) {
@@ -25,14 +25,30 @@ export const generateCitrusPlate = (context, width, height) => {
     const offsetW = cellW * col;
     const offsetH = cellH * row;
 
-    const pallete = random.pick(citrusColors);
+    let pallete;
+
+    if (i === 0 || i === 4) {
+      pallete = citrusColors[1];
+    } else 
+    if (i === 1 || i === 3) {
+      pallete = citrusColors[2];
+    } else
+    if (i === 2 || i === 6 || i === 8) {
+      pallete = citrusColors[0];
+    } else 
+    if (i === 5 || i === 7) {
+      pallete = citrusColors[3];
+    }
+
+
+    //const pallete = random.pick(citrusColors);
 
     // Create the citrus outer skin
     context.beginPath();
     context.arc(
       margX + offsetW + cellW / 2,
       margY + offsetH + cellH / 2,
-      cellW * 0.35,
+      cellW * 0.45,
       0,
       2 * Math.PI,
       false
@@ -45,7 +61,7 @@ export const generateCitrusPlate = (context, width, height) => {
     context.arc(
       margX + offsetW + cellW / 2,
       margY + offsetH + cellH / 2,
-      cellW * 0.33,
+      cellW * 0.43,
       0,
       2 * Math.PI,
       false
@@ -58,7 +74,7 @@ export const generateCitrusPlate = (context, width, height) => {
     context.arc(
       margX + offsetW + cellW / 2,
       margY + offsetH + cellH / 2,
-      cellW * 0.27,
+      cellW * 0.37,
       0,
       2 * Math.PI,
       false
@@ -73,12 +89,12 @@ export const generateCitrusPlate = (context, width, height) => {
       context.beginPath();
       context.strokeStyle = pallete.inner;
       var y =
-        Math.sin((k * Math.PI) / 360) * 100 + (margY + offsetH + cellH / 2);
+        Math.sin((k * Math.PI) / 360) * 400 + (margY + offsetH + cellH / 2);
       var x =
-        Math.cos((k * Math.PI) / 360) * 100 + (margX + offsetW + cellW / 2);
+        Math.cos((k * Math.PI) / 360) * 400 + (margX + offsetW + cellW / 2);
       context.moveTo(margX + offsetW + cellW / 2, margY + offsetH + cellH / 2);
       context.lineTo(x, y);
-      context.lineWidth = 3;
+      context.lineWidth = 9;
       context.stroke();
     }
 
@@ -87,7 +103,7 @@ export const generateCitrusPlate = (context, width, height) => {
     context.arc(
       margX + offsetW + cellW / 2,
       margY + offsetH + cellH / 2,
-      cellW * 0.05,
+      cellW * 0.07,
       0,
       2 * Math.PI,
       false
